@@ -202,15 +202,30 @@ HEADER
   width: 70%;
 }
 
+.movie__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-
-.movie__card {
+.movie__card {  
+  width: 25%;
+  min-width: 150px;
   background-color: grey;
   color: darkblue;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 16px 24px;
 }
+
+
 
 .movie__title {
   font-size: 24px;
@@ -256,3 +271,19 @@ FOOTER
   line-height: 2;
 }
 
+@media (max-width: 675px) {
+  .movies__container {
+    flex-direction: column;
+  }
+
+  .movies__sub-container {
+    width: 70%;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movies__sub-container h1 {
+    text-align: center;
+  }
+}
