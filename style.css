@@ -242,10 +242,15 @@ HEADER
   background-color: #222265;
   display: flex;
   justify-content: center;
-  z-index: 2;
+  z-index: -2;
   visibility: hidden;
   padding: 164px;
   font-size: 60px;
+}
+
+.loading__state--visible {
+  visibility: visible;
+  z-index: 2;
 }
 
 .fa-spinner {
