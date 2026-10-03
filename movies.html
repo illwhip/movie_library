@@ -38,16 +38,16 @@
         </a>
         <select id="filter" onchange="filterMovies(event)">
           <option value="" disabled selected>Sort</option>
-          <option value="RELEASE_DATE">Release Date</option>
-          <option value="RATING">Rating</option>
+          <option value="FIRST_TO_LAST">Oldest</option>
+          <option value="LAST_TO_FIRST">Newest</option>
         </select>
-      </div>     
-      <div class="divider"></div>
+      </div>      
     </div>
   </header>
   
   <section id="movie-collection">
-    <div class="row">
+    <div class="row movies__row">
+      <div class="divider"></div>
       <div class="container">
         <div class="movie__list">
           <div class="movie">
@@ -61,14 +61,15 @@
           </div>
         </div>    
       </div>
+      <div class="divider"></div>
+      <div class="loading__state">
+        <i class="fa-solid fa-spinner"></i>
+      </div>
     </div>
-    <div class="loading__state">
-      <i class="fa-solid fa-spinner"></i>
-    </div>
+    
   </section>   
   <footer>
     <div class="row footer__row">
-      <div class="divider"></div>
       <div class="container">
         <div class="footer__sub-container">
           <ul class="footer__links">

@@ -1,14 +1,20 @@
 const movieListEl = document.querySelector(" .movie__list");
 
 
-async function movieCollection() {
+async function movieCollection(filter) {
   const movies = await fetch("http://www.omdbapi.com/?apikey=6aff4282&s=batman");
   const moviesData = await movies.json();
-  console.log(moviesData)
-
   const { Search } = moviesData;
   console.log(Search);
-
+  if (filter === false) {
+  }
+  else if (filter === 'FIRST_TO_LAST') {
+    moviesData.Search.sort((a, b) => a.Year - b.Year)
+  }
+  else if (filter === 'LAST_TO_FIRST') {
+    moviesData.Search.sort((a, b) => b.Year - a.Year)
+  }
+  
   movieListEl.innerHTML = moviesData.Search.slice(0, 6).map((movie) => movieHTML(movie)).join("");
 }
 
@@ -23,3 +29,13 @@ function movieHTML(movie) {
     <p>Release Date: <b>${movie.Year}</b></p>
   </div>`;
 }
+
+
+function filterMovies(event) {
+  movieCollection(event.target.value)
+}
+
+
+setTimeout(() => {
+  movieCollection()
+}, 1000)
