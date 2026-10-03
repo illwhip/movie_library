@@ -10,43 +10,50 @@
 </head>
 <body>
   <nav>
-    <figure class="nav__img--wrapper">
-      <img class="nav__img" src="assets/images/wayne_enterprises_logo.jpg" alt="Wayne Enterprises Logo">
-    </figure>
-    <ul class="nav__links">
-      <a class="nav__link" href="#">About</a>
-      <a class="nav__link" href="#">Movies</a>
-      <a class="nav__link" href="#">Contact</a>
-    </ul>
+    <div class="nav__container">
+      <figure class="nav__img--wrapper">
+        <img class="nav__img" src="assets/images/wayne_enterprises_logo.jpg" alt="Wayne Enterprises Logo">
+      </figure>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="movies.html">About</a></li>
+        <li><a class="nav__link" href="movies.html">Movies</a></li>
+        <li><a class="nav__link" href="#">Contact</a></li>
+      </ul>
+    </div>
   </nav>
   <header>
     <div class="row">
       <div class="container">
-        <h1 class="header__title">The Legacy of Batman</h1>
+        <h1 class="header__title">The Legacy of <span class="text--color">Batman</span></h1>
         <h2 class="header__sub-title">Films through the decades</h2>
         <figure class="header__img--wrapper">
           <img class="header__img" src="assets/images/all_batman_actors.png" alt="Faces of Batman" >
         </figure>
         <div class="header__sub-container">
           <p class="header--para">All your Batman movies</p>
-          <button class="header__btn">
-            <img class="header__btn--img" src="assets/images/batman_symbol_2.jpg">
-          </button>
+          <a class="special__link" href="movies.html">
+            <button class="header__btn">
+              <img class="header__btn--img" src="assets/images/batman_symbol_1.jpg">
+            </button>
+          </a>
         </div>
       </div>
     </div>
   </header>
   <footer>
-    <div class="row">
+    <div class="row footer__row">
       <div class="container">
-        <ul class="footer__links">
-          <a class="footer__link" href="#">About</a>
-          <a class="footer__link" href="">Movies</a>
-          <a class="footer__link" href="">Contact</a>
-        </ul>
-        <figure class="footer__img--wrapper">
-          <img class="footer__img" src="assets/images/batman_symbol_1.jpg" alt="Batman Logo">
-        </figure>
+        <div class="footer__sub-container">
+          <ul class="footer__links">
+            <li><a class="footer__link" href="#">Home</a></li>
+            <li><a class="footer__link" href="">Movies</a></li>
+            <li><a class="footer__link" href="">Contact</a></li>
+          </ul>
+          <figure class="footer__img--wrapper">
+            <img class="footer__img" src="assets/images/batman_symbol_2.jpg" alt="Batman Logo">
+          </figure>
+        </div>
+        <p>&copy 2026 Whipple Designs.  All rights reserved.</p>
       </div>
     </div>
   </footer>

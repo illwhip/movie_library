@@ -10,36 +10,75 @@
 </head>
 <body>
   <nav>
-    <figure class="nav__img--wrapper">
-      <img class="nav__img" src="assets/images/wayne_shadow_batman_logo.jpg" alt="Wayne Enterprises Logo">
-    </figure>
-    <ul class="nav__links">
-      <a class="nav__link" href="#">About</a>
-      <a class="nav__link" href="#">Movies</a>
-      <a class="nav__link" href="#">Contact</a>
-    </ul>
+    <div class="nav__container">
+      <figure class="nav__img--wrapper">
+        <img class="nav__img" src="assets/images/wayne_shadow_batman_logo.jpg" alt="Wayne Enterprises Logo">
+      </figure>
+      <ul class="nav__links">
+        <a class="nav__link" href="#">About</a>
+        <a class="nav__link" href="#">Movies</a>
+        <a class="nav__link" href="#">Contact</a>
+      </ul>
+    </div>
   </nav>
   <header>
-
-
+    <div class="row movies__row">
+      <div class="container movies__container">
+        <div class="movies__sub-container">
+          <h1 class="header__title"><span class="text--color">Batman</span> Filmology</h1>
+          <p>Discover all the <span class="text--color">Batman</span> movies from each generation, the actors that made them great and the various styles the Dark Knight has been portayed.</p>
+        </div>
+        <figure class="movie__header__img--wrapper">
+          <img class="movie__header__img" src="assets/images/wayne_tower.jpg" alt="">
+        </figure>
+      </div> 
+      <div class="search">
+        <a class="special__link" href="/index.html">
+          <button class="back__btn">← Back</button>
+        </a>
+        <select id="filter" onchange="filterMovies(event)">
+          <option value="" disabled selected>Sort</option>
+          <option value="RELEASE_DATE">Release Date</option>
+          <option value="ACTOR">Actor</option>
+          <option value="RATING">Rating</option>
+        </select>
+      </div>     
+      <div class="divider"></div>
+    </div>
   </header>
+  
   <section id="movie-collection">
-
-
-  </section>
-
-    <i class="fa-solid fa-spinner"></i>
-  <footer>
     <div class="row">
       <div class="container">
-        <ul class="footer__links">
-          <a class="footer__link" href="#">About</a>
-          <a class="footer__link" href="">Movies</a>
-          <a class="footer__link" href="">Contact</a>
-        </ul>
-        <figure class="footer__img--wrapper">
-          <img class="footer__img" src="assets/images/batman_symbol_1.jpg" alt="Batman Logo">
-        </figure>
+        <div class="movie__card">
+          <figure class="movie__cover--wrapper">
+            <img class="movie__cover" src="" alt="Movie Cover">
+          </figure>
+          <h4 class="movie__title">Batman</h4>
+          <p>Release Date: <b>2015</b></p>
+          <p>Batman:<b>Actor Name</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="loading__state">
+      <i class="fa-solid fa-spinner"></i>
+    </div>
+  </section>   
+  <footer>
+    <div class="row footer__row">
+      <div class="divider"></div>
+      <div class="container">
+        <div class="footer__sub-container">
+          <ul class="footer__links">
+            <li><a class="footer__link" href="#">Home</a></li>
+            <li><a class="footer__link" href="">Movies</a></li>
+            <li><a class="footer__link" href="">Contact</a></li>
+          </ul>
+          <figure class="footer__img--wrapper">
+            <img class="footer__img" src="assets/images/batman_symbol_2.jpg" alt="Batman Logo">
+          </figure>
+        </div>
+        <p>&copy 2026 Whipple Designs.  All rights reserved.</p>
       </div>
     </div>
   </footer>
