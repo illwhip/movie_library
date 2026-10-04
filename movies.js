@@ -6,20 +6,6 @@ function getInput() {
   let inputField = document.getElementById("userInput");
   let value = inputField.value;
 
-//   if (!!value === false) {  
-//     console.log(value)  
-//     loading.classList.remove('loading__state--visible');
-//     const promise = "http://www.omdbapi.com/?apikey=6aff4282&s=batman";
-//     return movieCollection()
-//   }
-//   else {    
-//     console.log(value)
-//     loading.classList.remove('loading__state--visible');
-//     const promise = "http://www.omdbapi.com/?apikey=6aff4282&s=" + value;
-//     return movieCollection()
-//   }
-// }
-
   if (!!value === false) {  
     // console.log(value)  
     loading.classList.remove('loading__state--visible');
@@ -35,19 +21,15 @@ function getInput() {
 const input = document.getElementById('userInput');
 input.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') {
-    getInput();
+    movieCollection();
   }
 });
-
-const promise = getInput()
-// console.log(getInput())
-
-movieCollection()
 
 
 async function movieCollection(filter) {
   loading.classList += ' loading__state--visible';
-  
+  const promise = getInput()
+
   const movies = await fetch(`${promise}`);
   const moviesData = await movies.json();
   
@@ -74,11 +56,13 @@ function movieHTML(movie) {
   </div>`;
 }
 
+movieCollection()
+
 function filterMovies(event) {
   movieCollection(event.target.value);
 }
-
   
  setTimeout(() => {
   getInput();
 }, 2000);
+
