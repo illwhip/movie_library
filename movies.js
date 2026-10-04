@@ -1,13 +1,32 @@
 const movieListEl = document.querySelector(" .movie__list");
+const loading = document.querySelector(' .loading__state')
 
+function getInput() {
+  let inputField = document.getElementById("userInput");
+  let value = inputField.value
+
+  if (!!value === false) {
+    let promise = "http://www.omdbapi.com/?apikey=6aff4282&s=" + "batman"
+    loading.classList.remove('loading__state--visible')
+    console.log(promise)
+    return movieCollection()
+  }
+  else {
+    let promise = "http://www.omdbapi.com/?apikey=6aff4282&s=" + value
+    loading.classList.remove('loading__state--visible')
+    console.log(promise)
+    return movieCollection()
+  }
+}
+
+getInput()
 
 async function movieCollection(filter) {
-  const loading = document.querySelector(' .loading__state')
   loading.classList += ' loading__state--visible'
-  const movies = await fetch("http://www.omdbapi.com/?apikey=6aff4282&s=batman");
+  
+  const movies = await fetch(`${promise}`);
   const moviesData = await movies.json();
-  const { Search } = moviesData;
-  console.log(Search);
+  
   if (filter === false) {
   }
   else if (filter === 'FIRST_TO_LAST') {
@@ -16,12 +35,12 @@ async function movieCollection(filter) {
   else if (filter === 'LAST_TO_FIRST') {
     moviesData.Search.sort((a, b) => b.Year - a.Year)
   }
+
   loading.classList.remove('loading__state--visible')
   movieListEl.innerHTML = moviesData.Search.slice(0, 6).map((movie) => movieHTML(movie)).join("");
   
 }
 
-movieCollection();
 
 function movieHTML(movie) {
   return `<div class="movie__card">
@@ -38,6 +57,3 @@ function filterMovies(event) {
   movieCollection(event.target.value)
 }
 
-setTimeout(() => {
-  movieCollection()
-}, 6000)
