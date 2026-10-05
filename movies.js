@@ -9,12 +9,12 @@ function getInput() {
   if (!!value === false) {  
     // console.log(value)  
     loading.classList.remove('loading__state--visible');
-    return "http://www.omdbapi.com/?apikey=6aff4282&s=batman";
+    return "https://www.omdbapi.com/?apikey=6aff4282&s=batman";
   }
   else {    
     // console.log(value)
     loading.classList.remove('loading__state--visible');
-    return "http://www.omdbapi.com/?apikey=6aff4282&s=" + value;
+    return "https://www.omdbapi.com/?apikey=6aff4282&s=" + value;
   }
 }
 
